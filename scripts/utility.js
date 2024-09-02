@@ -15,6 +15,10 @@ function setBackgroundColor(elementId){
     element.classList.add('bg-amber-400')
 }
 
+function removeBackgroundColorById(elementId){
+    const removeBg = document.getElementById(elementId);
+    removeBg.classList.remove('bg-amber-400');
+}
 
 
 function getRandomAlphabet() {
