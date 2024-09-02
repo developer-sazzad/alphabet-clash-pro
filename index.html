@@ -11,15 +11,88 @@
     <!-- Custom CSS Links -->
     <link rel="stylesheet" href="./Styles/style.css">
 </head>
+
 <body>
     <main class="bg-black min-h-screen bg-[url(./images/background.png)] bg-no-repeat bg-center">
-        <section class="flex min-h-screen flex-col items-center justify-center">
+        <!-- Home Screen -->
+        <section id="home-screen" class="flex min-h-screen flex-col items-center justify-center">
             <div class="flex flex-col text-white text-center">
                 <h1 class="font-anton text-8xl">ALPHABET CLASH</h1>
                 <p class="my-10 font-semibold text-xl">Unleash Your Keyboard Kung Fu : Press “Enter” to Play</p>
-                <button class="btn w-96 mx-auto text-lg font-medium">Play Now</button>
+                <button onclick="play()" class="btn w-96 mx-auto text-lg font-medium">Play Now</button>
+            </div>
+        </section>
+        <!-- PlayGround Section -->
+        <section id="playground" class="flex flex-col min-h-screen justify-center items-center hidden">
+            <!-- Display Start -->
+            <div class="flex flex-col">
+                <div
+                    class="artboard artboard-horizontal phone-6 border-8 border-[#010313CC] bg-[#FFFFFFB3] flex flex-col items-center text-white mx-auto">
+                    <div class="bg-black px-6 rounded-b-xl py-2">Don't watch keyboard while playing...</div>
+                    <span id="current-alphabet" class="text-9xl mt-8 text-black font-bold uppercase">Y</span>
+                </div>
+            </div>
+            <!-- Keyboard -->
+            <div class="mt-10">
+                <div class="my-1 flex w-full justify-center gap-1">
+                    <kbd id="q" class="kbd">q</kbd>
+                    <kbd id="w" class="kbd">w</kbd>
+                    <kbd id="e" class="kbd">e</kbd>
+                    <kbd id="r" class="kbd">r</kbd>
+                    <kbd id="t" class="kbd">t</kbd>
+                    <kbd id="y" class="kbd">y</kbd>
+                    <kbd id="u" class="kbd">u</kbd>
+                    <kbd id="i" class="kbd">i</kbd>
+                    <kbd id="o" class="kbd">o</kbd>
+                    <kbd id="p" class="kbd">p</kbd>
+                </div>
+                <div class="my-1 flex w-full justify-center gap-1">
+                    <kbd id="a" class="kbd">a</kbd>
+                    <kbd id="s" class="kbd">s</kbd>
+                    <kbd id="d" class="kbd">d</kbd>
+                    <kbd id="f" class="kbd">f</kbd>
+                    <kbd id="g" class="kbd">g</kbd>
+                    <kbd id="h" class="kbd">h</kbd>
+                    <kbd id="j" class="kbd">j</kbd>
+                    <kbd id="k" class="kbd">k</kbd>
+                    <kbd id="l" class="kbd">l</kbd>
+                </div>
+                <div class="my-1 flex w-full justify-center gap-1">
+                    <kbd id="z" class="kbd">z</kbd>
+                    <kbd id="x" class="kbd">x</kbd>
+                    <kbd id="c" class="kbd">c</kbd>
+                    <kbd id="v" class="kbd">v</kbd>
+                    <kbd id="b" class="kbd">b</kbd>
+                    <kbd id="n" class="kbd">n</kbd>
+                    <kbd id="m" class="kbd">m</kbd>
+                    <kbd id="/" class="kbd">/</kbd>
+                </div>
+            </div>
+            <!-- buttons -->
+            <div class="flex justify-between w-3/4">
+                <button class="btn bg-[#894189] hover:bg-[#c23dc2] text-white rounded-full px-6">
+                    Life
+                    <img src="./images/heart.svg" alt="">
+                    <span>1</span>
+                </button>
+                <button class="btn bg-[#360490] hover:bg-[#6d34d8] text-white rounded-full px-6">
+                    Score
+                    <img src="./images/dollar.svg" alt="">
+                    <span>1</span>
+                </button>
+            </div>
+        </section>
+        <!-- Score board -->
+        <section id="score-board" class="flex flex-col min-h-screen justify-center items-center hidden">
+            <div class="bg-[#ffffff33] bg-no-repeat bg-center h-full py-10 px-16 rounded-3xl border-2 text-center">
+                <h2 class="text-5xl font-bold text-white">Score : <span>14</span></h2>
+                <button class="bg-white text-black py-2 px-6 my-5 font-semibold rounded-xl">Play Again</button>
+                <p class="text-2xl font-bold text-white">Practice will make you Pro</p>
             </div>
         </section>
     </main>
+    <script src="./scripts/utility.js"></script>
+    <script src="./scripts/script.js"></script>
 </body>
+
 </html>
