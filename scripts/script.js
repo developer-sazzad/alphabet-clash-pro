@@ -5,6 +5,9 @@
 //     const playGround = document.getElementById('playground');
 //     playGround.classList.remove('hidden');
 // }
+
+
+// Score Incrase Function Start 
 function handleKeyboardEvent(event){
     // get Keyboard pressed button
     const playerPressed = event.key;
@@ -18,13 +21,13 @@ function handleKeyboardEvent(event){
 
     // Check Right or Wrong Keyboard Key
     if(playerPressed === expectedAlphabet){
-        console.log('You Win.');
+        // console.log('You Win.');
         // update Score
         // 1. get the current Score
         const currentScoreElement = document.getElementById('current-score');
         const currentScoreString = currentScoreElement.innerText;
         const currentScore = parseInt(currentScoreString);
-        console.log(currentScore);
+        // console.log(currentScore);
 
         // 2. incrace the score by 1
         const inscraseScore = currentScore + 1;
@@ -34,13 +37,22 @@ function handleKeyboardEvent(event){
         removeBackgroundColorById(expectedAlphabet);
         play();
     }else{
-        console.log('You Lost your life.')
+        const currentLifeElement = document.getElementById('current-life');
+        const currentLifeString = currentLifeElement.innerText;
+        if(currentLifeString >= 1){
+            const diScraseLife = currentLifeString - 1;
+            currentLifeElement.innerText = diScraseLife;
+        }
+        removeBackgroundColorById(expectedAlphabet);
+
+        play();
+
+        // console.log('You Lost your life.')
     }
 
 }
 document.addEventListener('keyup', handleKeyboardEvent);
-
-
+// Score Function End
 
 
 
@@ -58,4 +70,5 @@ function play(){
     playGame();
     
 }
+
 
