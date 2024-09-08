@@ -1,5 +1,3 @@
-
-
 function hideElementById(elementId) {
     const hideElement = document.getElementById(elementId);
     hideElement.classList.add('hidden');
@@ -20,7 +18,23 @@ function removeBackgroundColorById(elementId){
     removeBg.classList.remove('bg-amber-400');
 }
 
+function getTextElementById(elementId){
+    const element = document.getElementById(elementId);
+    const elementValue = element.innerText;
+    const textValue = parseInt(elementValue);
+    return textValue;
+}
 
+function setTextElementById(elementId, value){
+    const element = document.getElementById(elementId);
+    element.innerText = value;
+}
+
+function getElementTextById(elementId){
+    const element = document.getElementById(elementId);
+    const text = element.innerText;
+    return text;
+}
 function getRandomAlphabet() {
     // Arrary theke later alada korar jonno
     const alphabetString = 'abcdefghijklmnopqrstuvwxyz';
@@ -37,7 +51,17 @@ function getRandomAlphabet() {
     return alphabet;
 }
 
+// function getARandomAlphabet() {
+//     // get or create an alphabet array
+//     const alphabetString = 'abcdefghijklmnopqrstuvwxyz';
+//     const alphabets = alphabetString.split('');
+//     // console.log(alphabets);
 
-function gameOver(){
+//     // get a random index between 0 -25
+//     const randomNumber = Math.random() * 25;
+//     const index = Math.round(randomNumber);
     
-}
+//     const alphabet = alphabets[index];
+//     // console.log(index, alphabet);
+//     return alphabet;
+// }
